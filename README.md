@@ -28,7 +28,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dep
 pip install -r requirements.txt
 ```
 
-## Usage
+## Usage 🖥
  
 Create a .env file using the example.env template
 
