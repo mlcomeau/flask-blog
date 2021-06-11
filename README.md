@@ -25,6 +25,8 @@ pip install -r requirements.txt
 
 Create a .env file using the example.env template
 
+For Flask_Mail two variables will need to be set, EMAIL and EMAIL_PASSWORD. Currently Flask_Mail is configured to work with Gmail so a gmail account should be used. Otherwise, the Flask_Mail configuration settings can be changed in __init___.py 
+
 
 Start flask development server
 ```bash
