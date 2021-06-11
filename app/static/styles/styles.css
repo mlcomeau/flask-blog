@@ -1,0 +1,370 @@
+/* CSS HEX
+--rose-madder: #db2b39ff;
+--space-cadet: #29335cff;
+--marigold: #f3a712ff;
+--deep-champagne: #f0cea0ff;
+--dark-lava: #534d41ff;*/
+
+@import url('https://font.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* Global Styles
+-----------------------------------------------------------*/
+/* The box model fix*/
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f5f5f9;
+}
+
+footer{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #29335cff;
+    position: relative;
+    width: 100%;
+    height: auto;;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .container .sec {
+    margin-right: 30px;
+}
+
+footer .container .sec.aboutus{
+    width: 40%;
+}
+
+footer .container h2{
+    position: relative;
+    color: #f0cea0ff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer p{
+    color: #fff;
+}
+
+.sci{
+    margin-top: 20px;
+    display: flex;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sci li a:hover{
+    background: #f00;
+}
+
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+
+.quickLinks{
+    position: relative;
+    width: 25%;
+}
+
+.quickLinks ul li{
+    list-style: none;
+}
+
+.quickLinks ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quickLinks ul li a:hover{
+    color: #f0cea0ff;
+}
+
+.contact{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+.contact .info{
+    position: relative;
+}
+
+.contact .info li{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1){
+    color: #f0cea0ff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact .info li span{
+    color: #fff;
+}
+
+.contact .info li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact .info li a:hover{
+    color: #f0cea0ff;
+}
+
+.copyrightText{
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    background: #1e2442;
+    padding: 8px 100px;
+    text-align: center;
+    color: #fff;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 40px;
+    }
+    footer .container{
+        flex-direction: column;
+    }
+    footer .container .sec{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container .sec.aboutus, .quickLinks, .contact{
+        width: 100%;
+    }
+
+    .copyrightText{
+        padding: 8px 40px;
+    }
+}
+
+.menu{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #29335cff;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0cea0ff;
+    box-shadow: 5px 0 10px rgba(0,0,0,.6);
+}
+
+.logo{
+    color: #f0cea0ff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    padding: 0 80px;
+    font-weight: bold;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: rgb(247, 223, 191);
+    font-family: 'Montserrat', sans-serif;;
+    text-decoration: none;
+}
+
+a:hover{ 
+    color: rgb(247, 223, 191); 
+    font-family: 'Montserrat', sans-serif;; 
+    text-decoration: none;
+}
+
+.menu_item {
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.menu_item li{
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.menu_item li a{
+    padding: 7px 13px;
+    font-size: 18px;
+    display: block;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+.menu_item li:hover, li.active{
+    background-color: rgba(0, 0, 0, .3);
+    transition: .4s;
+}
+
+.btn_menu{
+    margin-right: 30px;
+    font-size: 25px;
+    color: #f0cea0ff;
+    cursor: pointer;
+    cursor: pointer;
+    display: none;
+}
+
+ul.show{
+    top: 65px;
+}
+
+/* Grid */
+.work_container{
+    padding : 20px;
+    /* box-shadow: 0px 15px 10px -15px rgb(0, 0, 0); */
+    margin-bottom: 50px;
+  }
+  
+  .work_container h1{
+    color: black;
+    font-weight: normal;
+    margin: 10px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  .grid_work { 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+  }
+    
+  .grid_work > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  }
+  .grid_work > article img {
+    max-width: 100%;
+  }
+  .text {
+    padding: 0 20px 20px;
+  }
+  .text button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .text button:hover{
+    background: #f00;
+  /*   color: black; */
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 952px){
+    .logo{
+        font-size: 30px;
+        padding-left: 35px;
+    }
+    .menu_item li a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 858px){
+    .menu{
+        height: 65px;
+    }
+    .btn_menu{
+        display: inline-flex;
+    }
+    .menu_item{     
+        position: fixed;
+        width: 100vw;
+        height: calc(100% - 65px);
+        background: #db2b39ff;
+        top: -100vh;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+    }
+
+    .menu_item li{
+        margin: 30px 0 0 0;
+        line-height: 30px;
+    }
+
+    .menu_item li:hover{
+        background: none;
+    }
+
+    .menu_item li a{
+        font-size: 20px;
+        color: #f0cea0ff;
+        font-weight: bold;
+    }
+
+    .menu_item li a:hover{
+        color: #29335cff
+    }
+    .logo{
+        font-size: 25px;
+        padding-left: 35px;
+    }
+}
+@media screen and (max-width: 850px) and (orientation: landscape) {
+    .menu_item li{
+        margin: 5px 0 0 0;
+    }
+
+    .menu_item{
+        overflow: scroll;
+        height: calc(100% 65px);
+    }
+}
