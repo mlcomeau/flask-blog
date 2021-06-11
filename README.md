@@ -1,12 +1,20 @@
-# Flask-Blog
+# Portfolio 📓
+This project is a portfolio website using Flask. This will get you familiar with Python and some of the tools.
 
-Minimal Flask template to get started on your blog application for MLH Fellowship Production Engineering track.
- 
+## Getting Started 🚀
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Installation
+### Prerequisites 🔧
+You need to have a web navigator, preferably the most updated versions:
+> + Google Chrome
+> + Firefox
+> + Safari
+> + Internet Explorer
+> + Opera
+
+### Installing ⚙️
 
 Make sure you have python3 and pip installed
-
 
 Create and activate virtual environment using virtualenv
 ```bash
@@ -21,8 +29,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-
-
+ 
 Create a .env file using the example.env template
 
 For Flask_Mail two variables will need to be set, EMAIL and EMAIL_PASSWORD. Currently Flask_Mail is configured to work with Gmail so a gmail account should be used. Otherwise, the Flask_Mail configuration settings can be changed in __init___.py 
@@ -30,11 +37,27 @@ For Flask_Mail two variables will need to be set, EMAIL and EMAIL_PASSWORD. Curr
 
 Start flask development server
 ```bash
+$ pip install Flask-Mail
 $ export FLASK_ENV=development
 $ flask run
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Build With 🛠
++ HTML5 - The web page structure
++ CSS3 - The style of the page
++ JS - Some interaction on the page
++ Flask - Build components on the page
 
-Please make sure to update tests as appropriate.
+## Authors 🖋
++ **Megan Comeau** *-  Web developer -*  [mlcomeau](https://github.com/mlcomeau)
++ **Carlos Moisés Chávez Jiménez** *-   Web developer -* [NoMolestar](https://github.com/NoMolestar)
++ **Oscar Fernandez** *-  Web developer-* [OscarFM014](https://github.com/OscarFM014)
+
+See also the list of [**contributors**](https://github.com/OscarFM014/diversify/graphs/contributors) who participated in this project.
+
+## License 📄
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License
+
+
+## Acknowledgments 🎁
++ Thank to my teammates to take this step with me and make an amazing project.
