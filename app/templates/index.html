@@ -35,6 +35,12 @@
         </span>
         <br><br>
 
+        {% if success %}
+            <div class="alert alert-success" role="alert">
+                Your message has been sent successfully!
+            </div>
+        {% endif %}
+
         <section id="work" class="work_container">
             <h1>Projects</h1>
             <div class="container">
@@ -81,11 +87,6 @@
 
         <div class="contact-container">
             <div class="contact-form">
-                {% if success %}
-                <div class="alert alert-success" role="alert">
-                    Your message has been sent successfully!
-                </div>
-                {% endif %}
                 <form method="POST" >
                     <h4>Interested in working together? Let's chat!</h4>
                     <div class="mb-3">
