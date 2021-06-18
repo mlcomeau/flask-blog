@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, send_from_directory, request
+import flask
 from dotenv import load_dotenv
 from flask_mail import Mail, Message 
 
@@ -38,5 +39,12 @@ def index():
 
     return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
 
+@app.route('/health')
+def health():
+    status_code = flask.Response(status=200)
+    return status_code
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=False)
+
+
