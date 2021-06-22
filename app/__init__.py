@@ -2,10 +2,14 @@ import os
 from flask import Flask, render_template, send_from_directory, request
 import flask
 from dotenv import load_dotenv
-from flask_mail import Mail, Message 
+from flask_mail import Mail, Message
+from . import db 
 
 load_dotenv()
 app = Flask(__name__)
+
+app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+db.init_app(app)
 
 # Configuration for flask_mail 
 # This setup is specifically for gmail, other email servers have different configuration settings 
@@ -44,7 +48,7 @@ def health():
     status_code = flask.Response(status=200)
     return status_code
 
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=False)
+# if __name__ == '__main__':
+#     app.run(host='127.0.0.1', port=5000, debug=False)
 
 
