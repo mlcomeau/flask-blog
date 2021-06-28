@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, send_from_directory, request
+from flask import Flask, render_template, send_from_directory, request, flash, redirect, url_for
 import flask
 from dotenv import load_dotenv
 from flask_mail import Mail, Message
@@ -83,11 +83,12 @@ def register():
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
+    error = None
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
         db = get_db()
-        error = None
+        
         user = db.execute(
             'SELECT * FROM user WHERE username = ?', (username,)
         ).fetchone()
@@ -98,12 +99,12 @@ def login():
             error = 'Incorrect password.'
 
         if error is None:
-            return "Login Successful", 200 
+            flash('You were successfully logged in')
+            return redirect(url_for('index'))
         else:
-            return error, 418
+            return render_template('login.html', error=error)
     
-    ## TODO: Return a login page
-    return "Login Page not yet implemented", 501
+    return render_template('login.html', error=error)
 
 
 

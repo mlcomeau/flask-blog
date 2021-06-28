@@ -14,20 +14,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="./static/styles/styles.css">
         <link rel="stylesheet" href="./static/styles/main.css">
-        <title>Your name | Resume</title>
+        <title>Megan Comeau | Portfolio</title>
         <script src="./static/js/app.js" defer></script>
         <script src="https://kit.fontawesome.com/3354552753.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- // Intro -->
         <nav class="menu">
-            <label class="logo">Portfolio</label>
+            <label class="logo">Megan Comeau</label>
             <ul class="menu_item">
-                <li class="active"><a href="#about">Start</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#work">Work Experience</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
             </ul>
         </nav>
         <span class="btn_menu">
@@ -37,9 +36,19 @@
 
         {% if success %}
             <div class="alert alert-success" role="alert">
-                Your message has been sent successfully!
+                You are now logged in!
             </div>
         {% endif %}
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
 
 
         <section id="work" class="work_container">
@@ -84,9 +93,7 @@
           </section>
         
 
-
-
-        <div class="contact-container">
+        <!-- <div class="contact-container">
             <div class="contact-form">
                 <form method="POST" >
                     <h4>Interested in working together? Let's chat!</h4>
@@ -105,8 +112,10 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>  
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-        </div>
+        </div> -->
+
+
+    <section id="contact" class="work_container">
         <footer>
             <div class="container">
                 <div class="sec aboutus">
@@ -118,38 +127,21 @@
                         Maxime nemo nulla officiis tempora hic placeat amet delectus sit.
                     </p>
                     <ul class="sci">
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/mlcomeau"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/megan-l-comeau/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
-                <div class="sec quickLinks">
-                    <h2>Quick Links</h2>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Terms & Consitions</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+
                 <div class="sec contact">
-                    <h2>Contact Info</h2>
+                    <h2>My Info</h2>
                     <ul class="info">
                         <li>
                             <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                            <span>Madrid 2440<br>
-                                Guadalajara, Jal 45400,<br>Mex</span>
-                        </li>
-                        <li>
-                            <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                            <p><a href="tel:12345678900">+1 234 567 8900</a><br>
-                                <a href="tel:12345678900">+1 234 567 8900</a></p>
+                            <span>Portland, OR, USA</span>
                         </li>
                         <li>
                             <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                            <p><a href="mailto:example@email.com">example@email.com</a></p>
+                            <p><a href="mailto:mlcomeau99@email.com">Email me</a></p>
                         </li>
                     </ul>
                 </div>
@@ -158,5 +150,9 @@
         <div class="copyrightText">
             <p>Copyright © 2021 All rights reserved</p>
         </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
     </body>
 </html>

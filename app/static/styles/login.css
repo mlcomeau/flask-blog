@@ -1,0 +1,7 @@
+.container {
+    width: 50%;
+    margin-top: 10%;
+    border-style: outset;
+    padding: 50px;
+    background-color: lightblue;
+}
