@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, send_from_directory, request, flash, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import flask
 from dotenv import load_dotenv
 from flask_mail import Mail, Message
@@ -73,7 +73,6 @@ def register():
                 (username, generate_password_hash(password))
             )
             db.commit()
-            flash(f"User {username} created successfully")
             return redirect(url_for('index'))
         else:
             return render_template('register.html', error=error)
@@ -100,7 +99,6 @@ def login():
             error = 'Incorrect password.'
 
         if error is None:
-            flash('You were successfully logged in')
             return redirect(url_for('index'))
         else:
             return render_template('login.html', error=error)
