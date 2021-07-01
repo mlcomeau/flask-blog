@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
-from flask import flask 
 from dotenv import load_dotenv
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -72,8 +71,7 @@ def index():
 
 @app.route('/health')
 def health():
-    status_code = flask.Response(status=200)
-    return status_code
+    return "Its working!"
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
