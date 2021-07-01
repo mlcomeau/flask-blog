@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
+from flask import flask 
 from dotenv import load_dotenv
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
