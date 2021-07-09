@@ -42,4 +42,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test site
-        run: bash prod-test.sh
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && bash prod-test.sh'
