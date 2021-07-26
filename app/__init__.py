@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
 from dotenv import load_dotenv
-from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -41,48 +40,16 @@ class UserModel(db.Model):
         return f"<User {self.username}>"
 
 
-# Configuration for flask_mail
-# This setup is specifically for gmail, other email servers have different configuration settings
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USE_SSL"] = False
-# These need to be setup in .env file
-app.config["MAIL_USERNAME"] = os.getenv("EMAIL")
-app.config["MAIL_PASSWORD"] = os.getenv("EMAIL_PASSWORD")
-
-# Emails are managed through a mail instance
-mail = Mail(app)
-
-
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == "POST":
-        # Get form data
-        name = request.form.get("name")
-        email = request.form.get("email")
-        message = request.form.get("message")
-
-        # Compose email and send
-        msg = Message(
-            subject=f"Mail from {name}",
-            body=f"Name: {name}\nEmail: {email}\n\nMessage: {message}",
-            recipients=[os.getenv("EMAIL")],
-            sender=os.getenv("EMAIL"),
-        )
-        mail.send(msg)
-
-        # success value determines that success alert will appear
-        return render_template(
-            "index.html", success=True, title="MLH Fellow", url=os.getenv("URL")
-        )
-
     return render_template("index.html", title="MLH Fellow", url=os.getenv("URL"))
 
 
 @app.route("/health")
 def health():
-    return "Its working!"
+    megan = UserModel.query.filter_by(username="megan").first()
+    has_megan = "yes" if megan is not None else "no"
+    return f"Works, has_megan: {has_megan}"
 
 
 @app.route("/register", methods=("GET", "POST"))
@@ -107,7 +74,6 @@ def register():
         else:
             return render_template("register.html", error=error)
 
-    ## TODO: Return a restister page
     return render_template("register.html")
 
 
